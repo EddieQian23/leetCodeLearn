@@ -1,0 +1,15 @@
+build
+logs
+bin
+.DS_Store
+*.log
+*.gz
+.gradle
+.idea
+out
+*.iml
+gradle
+*.bak
+.git
+gradlew
+gradlew.bat
