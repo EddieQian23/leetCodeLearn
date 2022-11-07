@@ -3,10 +3,10 @@ package simple.dp;
 public class DpTest {
 
     public static void main(String[] args) {
-        int value[] = {60, 100, 120};
-        int weight[] = {10, 20, 30};
+        int value[] = {6, 10, 12};
+        int weight[] = {1, 2, 3};
 
-        int w = 50; //袋子的容积
+        int w = 5; //袋子的容积
         int n = 3; //物品的个数
 
         int dp[][] = new int[n + 1][w + 1];// 存每个状态下的最优解
