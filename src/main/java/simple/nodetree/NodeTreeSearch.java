@@ -1,5 +1,9 @@
 package simple.nodetree;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
 public class NodeTreeSearch {
 
     int data;
@@ -41,6 +45,31 @@ public class NodeTreeSearch {
         }
     }
 
+    /**
+     * 使用栈的方式
+     * @param root
+     * @return
+     */
+    public static List<Integer> inOrderTraversal(NodeTreeSearch root) {
+
+        List<Integer> list = new ArrayList<>();
+        Stack<NodeTreeSearch> stack = new Stack<>();
+        NodeTreeSearch cur = root;
+
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            } else {
+                cur = stack.pop();
+                list.add(cur.data);
+                cur = cur.right;
+            }
+        }
+
+        return list;
+    }
+
     public static int find(NodeTreeSearch root, int data) {
 
         if (data > root.data) {
@@ -67,6 +96,7 @@ public class NodeTreeSearch {
             nodeTreeSearch.insert(nodeTreeSearch, data[i]);
         }
         System.out.println("中序遍历");
+        inOrderTraversal(nodeTreeSearch);
         inOrder(nodeTreeSearch);
         System.out.println(find(nodeTreeSearch, 9));
     }
